@@ -1,13 +1,13 @@
-<h1>Listing articles</h1>
+<h1>Listing houses</h1>
 <table>
  <tr>
    <th>Title</th>
    <th>Text</th>
  </tr>
- <% @articles.each do |article| %>
+ <% @houses.each do |house| %>
    <tr>
-     <td><%= article.title %></td>
-     <td><%= article.text %></td>
+     <td><%= house.title %></td>
+     <td><%= house.text %></td>
    </tr>
  <% end %>
 </table>
