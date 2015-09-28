@@ -1,0 +1,14 @@
+MVP:
+Game populated by user input
+Count chosen with random number
+Output total life at one time v. one at a time / crossing off
+User login
+User saved profile
+
+
+Step 2:
+Cross of items as you land on them
+Auto populate themes (Spouse: Presidents, Dictators, Male Celebrities, Female Celebrities)
+
+Step 3:
+Ability to rate the desirability of each person based on questions of things you prefer (are you a Republican or a Democrat?, other random characteristics like the Buzzfeed games)
