@@ -1,3 +1,4 @@
+
 	<div class="container">
 		<div class="row">
 			<form class="choice car col-xs-3">
@@ -8,7 +9,7 @@
 			<div class="choice col-xs-6">
 				<div class="row">
 					<span class="col-xs-3"></span>
-					<form class="choice car col-xs-6">
+					<form class="spouse col-xs-6">
 						<% @spouses.each do |spouse| %>
 							<input type="text" value="<%= spouse.name %>" placeholder="1">
 						<% end %>
@@ -16,10 +17,14 @@
 					<span class="col-xs-3"></span>
 				</div>
 			</div>
-			<form class="choice car col-xs-3">
+			<form class="choice house col-xs-3">
 				<% @houses.each do |house| %>
 					<input type="text" value="<%= house.style %>" placeholder="1">
 				<% end %>
 			</form>
 		</div>
 	</div>
+
+	<!-- button to click to get your number... Maybe add some swirly images here to asspciate with the number -->
+
+	<!-- result, possible gamelog next to it--> 
