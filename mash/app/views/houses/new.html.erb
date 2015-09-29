@@ -1,33 +1,7 @@
-<%= form_for :house, url: houses_path do |f| %>
- 
-  <% if @house.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@house.errors.count, "error") %> prohibited
-        this house from being saved:
-      </h2>
-      <ul>
-        <% @house.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+<p>This is the code to add a new house to the database. This is not really necessary unless users will be able to add their own home options, which could clutter our database. This could use more thought.</p>
+
+<%= form_for @house do |f| %>
+  <%= f.text_field :style, :placeholder => "Style of House" %>
+  <%= f.text_field :theme, :placeholder => "Theme of House" %>
+  <%= f.submit "Submit" %>
 <% end %>
- 
-<%= link_to 'Back', houses_path %>

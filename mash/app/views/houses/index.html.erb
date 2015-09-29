@@ -1,12 +1,7 @@
-<h1>MASH</h1>
-<table>
- <tr>
-   <th>MASH</th>
-   <th>Living</th>
- </tr>
+<p>This is the code to show a list of all of the houses</p>
+
+<ul>
  <% @houses.each do |house| %>
-   <tr>
-     <td><%= house.living %></td>
-   </tr>
+   <li>Style: <%= house.style %> Theme: <%= house.theme %></li>
  <% end %>
-</table>
+</ul>

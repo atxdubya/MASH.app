@@ -1,15 +1,7 @@
-<h1>Listing spouses</h1>
+<p>This is the code to show a list of all of the spouses</p>
 
-<table>
- <tr>
-   <th>Title</th>
-   <th>Text</th>
- </tr>
-
+<ul>
  <% @spouses.each do |spouse| %>
-   <tr>
-     <td><%= spouse.title %></td>
-     <td><%= spouse.text %></td>
-   </tr>
+   <li>Name: <%= spouse.name %> Theme: <%= spouse.theme %> Gender: <%= spouse.gender %></li>
  <% end %>
-</table>
+</ul>
