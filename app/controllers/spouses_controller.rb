@@ -1,15 +1,15 @@
 class SpousesController < ApplicationController
 
     def index
-        @spouse = Spouse.all
-    end
-
-    def show
-        @spouse = Spouse.find(params[:id])
+        @spouses = Spouse.all
     end
 
     def new
         @spouse = Spouse.new
+    end
+
+    def show
+        @spouse = Spouse.find(params[:id])
     end
 
     def create

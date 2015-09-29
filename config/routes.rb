@@ -1,10 +1,42 @@
 Rails.application.routes.draw do
 
-  resources :users
-  resources :car
-  resources :houses
-  resources :spouses
+  #resources :users
+  #resources :cars
+  #resources :houses
+  #resources :spouses
   resources :sessions
+
+  get '/users/index' => 'users#index'
+  get '/users/new' => 'users#new'
+  get '/users/:id' => 'users#show'
+  post '/users/' => 'users#create'
+  get '/users/:id/edit' => 'users#edit'
+  put '/users/:id' => 'users#update'
+  delete '/users/:id' => 'users#destroy'
+
+  get '/cars/index' => 'cars#index'
+  get '/cars/new' => 'cars#new'
+  get '/cars/:id' => 'cars#show'
+  post '/cars/' => 'cars#create'
+  get '/cars/:id/edit' => 'cars#edit'
+  put '/cars/:id' => 'cars#update'
+  delete '/cars/:id' => 'cars#destroy'
+
+  get '/houses/index' => 'houses#index'
+  get '/houses/new' => 'houses#new'
+  get '/houses/:id' => 'houses#show'
+  post '/houses/' => 'houses#create'
+  get '/houses/:id/edit' => 'houses#edit'
+  put '/houses/:id' => 'houses#update'
+  delete '/houses/:id' => 'houses#destroy'
+
+  get '/spouses/index' => 'spouses#index'
+  get '/spouses/new' => 'spouses#new'
+  get '/spouses/:id' => 'spouses#show'
+  post '/spouses/' => 'spouses#create'
+  get '/spouses/:id/edit' => 'spouses#edit'
+  put '/spouses/:id' => 'spouses#update'
+  delete '/spouses/:id' => 'spouses#destroy'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

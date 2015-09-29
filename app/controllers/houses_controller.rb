@@ -2,14 +2,17 @@ class HousesController < ApplicationController
 
 
     def index
-        @house = House.all
+        @houses = House.all
     end
-    def show
-        @house = House.find(params[:id])
-    end
+
     def new
         @house = House.new
     end
+
+    def show
+        @house = House.find(params[:id])
+    end
+
     def create
         @house = House.new(house_params)
         if @house.save
@@ -19,6 +22,7 @@ class HousesController < ApplicationController
     def edit
         @house = House.find(params[:id])
     end
+    
     def udpate
         @house = House.find(params[:id])
         if @house.update(house_params)
@@ -30,6 +34,7 @@ class HousesController < ApplicationController
         @house.destroy
         redirect_to '/houses'
     end
+    
     private
         def house_params
             params.require(:house).permit(:post)

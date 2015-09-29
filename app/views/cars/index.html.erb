@@ -1,0 +1,7 @@
+<p>This is the code to show a list of all of the cars</p>
+
+<ul>
+ <% @cars.each do |car| %>
+   <li>Style: <%= car.make %> Theme: <%= car.car_model %> Year: <%= car.year %> Theme: <%= car.theme %></li>
+ <% end %>
+</ul>
