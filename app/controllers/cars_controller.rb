@@ -14,10 +14,10 @@ class CarsController < ApplicationController
 	end
 
 	def create
-		@car = Car.new(user_params)
+		@car = Car.new(car_params)
 
 		if @car.save
-			redirect_to '/cars'
+			redirect_to '/cars/index'
 		end
 	end
 
@@ -42,7 +42,7 @@ class CarsController < ApplicationController
 
 	private
     def car_params
-        params.require(:car).permit(:first_name, :last_name, :email, :password)
+        params.require(:car).permit(:make, :car_model, :year, :theme)
     end    
 
 end
