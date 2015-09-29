@@ -17,7 +17,7 @@ class CarsController < ApplicationController
 		@car = Car.new(user_params)
 
 		if @car.save
-			redirect_to '/cars/index'
+			redirect_to '/cars'
 		end
 	end
 
