@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # resources :spouses
   resources :sessions
 
+  get '/games/' => 'games#index'
+
   get '/users/' => 'users#index'
   get '/users/new' => 'users#new'
   get '/users/:id' => 'users#show'

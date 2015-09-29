@@ -28,7 +28,7 @@ class SpousesController < ApplicationController
         @spouse = Spouse.find(params[:id])
 
         if @spouse.update(spouse_params)
-            redirect_to @spouse
+            redirect_to '/spouses/index'
         end
     end
 
@@ -41,7 +41,7 @@ class SpousesController < ApplicationController
 
     private
         def spouse_params
-            params.require(:spouse).permit(:post)
+            params.require(:spouse).permit(:name, :gender, :theme)
         end
 
 end
