@@ -16,13 +16,17 @@
 #
 default: &default
   adapter: postgresql
+<<<<<<< HEAD:mash/config/database.yml
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
+=======
+>>>>>>> 87b52fe23655ca40ee2000feecd2aa00b2fb0e5b:config/database.yml
   pool: 5
 
 development:
   <<: *default
+<<<<<<< HEAD:mash/config/database.yml
   database: mash_development
 
   # The specified database role being used to connect to postgres.
@@ -51,13 +55,20 @@ development:
   #   log, notice, warning, error, fatal, and panic
   # Defaults to warning.
   #min_messages: notice
+=======
+  database: MASH_App_development
+>>>>>>> 87b52fe23655ca40ee2000feecd2aa00b2fb0e5b:config/database.yml
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+<<<<<<< HEAD:mash/config/database.yml
   database: mash_test
+=======
+  database: MASH_App_test
+>>>>>>> 87b52fe23655ca40ee2000feecd2aa00b2fb0e5b:config/database.yml
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +91,10 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD:mash/config/database.yml
   database: mash_production
   username: mash
   password: <%= ENV['MASH_DATABASE_PASSWORD'] %>
+=======
+  database: MASH_App_production
+>>>>>>> 87b52fe23655ca40ee2000feecd2aa00b2fb0e5b:config/database.yml
