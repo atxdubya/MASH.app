@@ -1,25 +1,17 @@
-<p>This is the code to show a list of all of the cars</p>
+<form class="choice car col-xs-3">
+	<% @cars.each do |car| %>
+		<input type="text" value="<%= car.year %> <%= car.make %> <%= car.car_model %>" placeholder="1">
+	<% end %>
+</form>
 
-<ul>
- <% @cars.each do |car| %>
-   <li>Style: <%= car.make %> Theme: <%= car.car_model %> Year: <%= car.year %> Theme: <%= car.theme %></li>
- <% end %>
-</ul>
+<form class="choice car col-xs-3">
+	<% @spouses.each do |spouse| %>
+		<input type="text" value="<%= spouse.name %>" placeholder="1">
+	<% end %>
+</form>
 
-<p>This is the code to show a list of all of the spouses</p>
-
-<ul>
- <% @spouses.each do |spouse| %>
-   <li>Name: <%= spouse.name %> Theme: <%= spouse.theme %> Gender: <%= spouse.gender %></li>
- <% end %>
-</ul>
-
-<p>This is the code to show a list of all of the houses</p>
-
-<ul>
- <% @houses.each do |house| %>
-   <li>Style: <%= house.style %> Theme: <%= house.theme %></li>
- <% end %>
-</ul>
-
-<button>Play</button>
+<form class="choice car col-xs-3">
+	<% @houses.each do |house| %>
+		<input type="text" value="<%= house.style %>" placeholder="1">
+	<% end %>
+</form>
