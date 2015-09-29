@@ -1,3 +1,53 @@
+
+
+/********
+GENERAL
+********/
+
+/*image of a ripped notebook piece of paper with MASH as the title*/
+body	{
+	background-image: url("desk_mash.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+/********
+HEADER
+********/
+
+
+
+
+
+/********
+PAGE
+********/
+
+.choice {
+	margin-top: 30%;
+}
+
+form {
+	text-align: center;
+	list-style: none;
+}
+
+input {
+	border: 1px solid #83d0c9;
+
+}
+
+
+/********
+FOOTER
+********/
+
+
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

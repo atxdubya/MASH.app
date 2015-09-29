@@ -1,25 +1,31 @@
-<p>This is the code to show a list of all of the cars</p>
+	<div class="container">
+		<div class="row">
+			<form class="choice car col-xs-3">
+				<% @cars.each do |car| %>
+					<input type="text" value="<%= car.year %> <%= car.make %> <%= car.car_model %>" placeholder="1">
+				<% end %>
+			</form>
+			<div class="choice col-xs-6">
+				<div class="row">
+					<span class="col-xs-3"></span>
+					<form class="choice car col-xs-6">
+						<% @spouses.each do |spouse| %>
+							<input type="text" value="<%= spouse.name %>" placeholder="1">
+						<% end %>
+					</form>
+					<span class="col-xs-3"></span>
+				</div>
+			</div>
+			<form class="choice car col-xs-3">
+				<% @houses.each do |house| %>
+					<input type="text" value="<%= house.style %>" placeholder="1">
+				<% end %>
+			</form>
+		</div>
+	</div>
 
-<ul>
- <% @cars.each do |car| %>
-   <li>Style: <%= car.make %> Theme: <%= car.car_model %> Year: <%= car.year %> Theme: <%= car.theme %></li>
- <% end %>
-</ul>
+<% end %>
+	<!-- button to click to get your number... Maybe add some swirly images here to asspciate with the number -->
 
-<p>This is the code to show a list of all of the spouses</p>
+	<!-- result, possible gamelog next to it--> 
 
-<ul>
- <% @spouses.each do |spouse| %>
-   <li>Name: <%= spouse.name %> Theme: <%= spouse.theme %> Gender: <%= spouse.gender %></li>
- <% end %>
-</ul>
-
-<p>This is the code to show a list of all of the houses</p>
-
-<ul>
- <% @houses.each do |house| %>
-   <li>Style: <%= house.style %> Theme: <%= house.theme %></li>
- <% end %>
-</ul>
-
-<button>Play</button>
