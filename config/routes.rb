@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  #resources :users
-  #resources :cars
-  #resources :houses
-  #resources :spouses
+  # resources :users
+  # resources :cars
+  # resources :houses
+  # resources :spouses
   resources :sessions
 
-  get '/users/index' => 'users#index'
+  get '/games/' => 'games#index'
+
+  get '/users/' => 'users#index'
   get '/users/new' => 'users#new'
   get '/users/:id' => 'users#show'
   post '/users/' => 'users#create'

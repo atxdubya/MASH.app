@@ -3,6 +3,7 @@ class HousesController < ApplicationController
 
     def index
         @houses = House.all
+        @cars = Car.show_cars(4)
     end
 
     def new
