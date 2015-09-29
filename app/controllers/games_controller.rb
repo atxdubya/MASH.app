@@ -3,8 +3,10 @@ class GamesController < ApplicationController
 
 
 	def index
-		@cars = Car.show_cars 2
-		@houses = House.show_houses 2
-		@spouses = Spouse.show_spouses 2
+
+		@cars = Car.show_cars 4
+		@houses = House.show_houses 4
+		@spouses = Spouse.show_spouses 4
+
 	end
 end
