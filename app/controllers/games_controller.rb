@@ -67,7 +67,7 @@ class GamesController < ApplicationController
 
 					if nil_counter == total_entries then# we have the solution!
 						#return plight
-						break
+						break plight
 					end
 
 					# reset the cycle_counter
