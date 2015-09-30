@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # resources :spouses
   resources :sessions
 
-  get '/games/' => 'games#index'
+  get '/games' => 'games#index'
+  post '/games' => 'games#solveit'
 
   get '/users/' => 'users#index'
   get '/users/new' => 'users#new'
@@ -39,7 +40,7 @@ Rails.application.routes.draw do
   get '/spouses/:id/edit' => 'spouses#edit'
   put '/spouses/:id' => 'spouses#update'
   delete '/spouses/:id' => 'spouses#destroy'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

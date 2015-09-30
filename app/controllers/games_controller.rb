@@ -11,7 +11,11 @@ class GamesController < ApplicationController
 
 	end
 
-	def self.solveit
+	def solveit
+		byebug
+
+
+		# self.solveit
 		# require 'pry'  (for debugging in the ruby rebel)
 		# binding.pry    (for setting a breakpoint when using the ruby rebel)
 		# byebug         (for setting breakpoint when in rails)
