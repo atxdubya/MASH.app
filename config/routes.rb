@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :sessions
 
   get '/games/' => 'games#index'
-  #get '/games/' => 'games#name_of_method'
 
   get '/users/' => 'users#index'
   get '/users/new' => 'users#new'

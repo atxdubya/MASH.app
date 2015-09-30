@@ -1,0 +1,45 @@
+    <div class="container">
+        <div class="row">
+            <form class="choice car col-xs-3">
+                <input class="categories" type="text" value="CARS:" readonly>
+                <% @cars.each do |car| %>
+                    <input class="options" type="text" value="<%= car.name %>" placeholder="1">
+                <% end %>
+            </form>
+            <div class="choice col-xs-6">
+                <div class="row">
+                    <span class="col-xs-3"></span>
+                    <form class="spouse col-xs-6">
+                        <input class="categories" type="text" value="SPOUSE:" readonly>
+                        <% @spouses.each do |spouse| %>
+                            <input class="options" type="text" value="<%= spouse.name %>" placeholder="1">
+                        <% end %>
+                    </form>
+                    <span class="col-xs-3"></span>
+                </div>
+            </div>
+            <form class="choice house col-xs-3">
+                <input class="categories" type="text" value="LIVING:" readonly>
+                <% @houses.each do |house| %>
+                    <input class="options" type="text" value="<%= house.style %>" placeholder="1">
+                <% end %>
+            </form>
+        </div>
+        <!-- button to click to get your number goes here-->
+        <!-- <div class="row">
+            <span class="col-xs-2"></span>
+            <button class="pencil col-xs-8" type="button"><%= image_tag("pencil2.png") %></button>
+            <span class="col-xs-2"></span>
+        </div> -->
+        <div class="row outputbar">
+            <span class="col-xs-2"></span>
+            <div class="col-xs-8 input-group">
+              <span class="input-group-btn">
+                  <button onclick="solveit" class="mashbtn btn btn-default" type="button">MASH IT!</button>
+              </span>
+              <input type="text" class="form-control" id="results" placeholder="Your life..." value="<%= @plight %>"valuereadonly>
+            </div>
+            <span class="col-xs-2"></span>
+        </div>
+        <p><%= @gameboard %></p>
+    </div>

@@ -7,12 +7,11 @@ class GamesController < ApplicationController
 		@cars = Car.show_cars 2
 		@houses = House.show_houses 2
 		@spouses = Spouse.show_spouses 2
-		@gameboard = {Cars: @cars}, {Houses: @houses}, {Spouses: @spouses}
-		
+		#@solveit = Game.solveit
 
 	end
 
-	def solveit
+	def self.solveit
 		# require 'pry'  (for debugging in the ruby rebel)
 		# binding.pry    (for setting a breakpoint when using the ruby rebel)
 		# byebug         (for setting breakpoint when in rails)
@@ -25,12 +24,18 @@ class GamesController < ApplicationController
 		abode  = ["Manson", "Apartment", "Shack",nil, "House"].compact!
 		wheels = ["Bus", "Bicycle", "Mercedes", "Geo", "Feet"]
 		spouse = ["Julia", "Sponge Bob Square Pants", "Hillery", "Madonna", "Gilligan"]
-		kids   = ['1','Twins', '3', 'Twin girls and twin boys!']
+		# kids   = ['1','Twins', '3', 'Twin girls and twin boys!']
 
-		mashes = [abode, wheels, spouse, kids]
+		# houses = [@houses].compact!
+		# cars = [@cars]
+		# spouses = [@spouses]
+
+		mashes = [abode, wheels, spouse]
+
+		# mashes = [houses, cars, spouses]
 
 		# plight = {abode:nil, wheels:nil, spouse:nil, kids:nil}    # this is a hash...
-		plight = Array.new(mashes.length) # build a store for our answers here.
+		@plight = Array.new(mashes.length) # build a store for our answers here.
 
 		# given above, the challenge is to use cycle to get plight
 		# method is to iterate over the arrays, testing for nil and cycle_ndx = cycle
@@ -38,12 +43,14 @@ class GamesController < ApplicationController
 		# set origin value to null, only increment index counter if origin not nil.
 		# total when totalIncCounter = total entries in arrays... we are done.
 
-		total_entries = abode.length + wheels.length + spouse.length + kids.length
+		total_entries = abode.length + wheels.length + spouse.length
+		
+		# total_entries = houses.length + cars.length + spouses.length
 
 		cycle_counter = 1  # when get to cycle then we extract a plight value
-		mash_ndx			=	0  # keeps track of current mash
-		cell_ndx			=	0  # keeps track of current cell in current mash
-		nil_counter		=	0  # keeps track of total nils set. Determines end of game.
+		mash_ndx = 0  # keeps track of current mash
+		cell_ndx = 0  # keeps track of current cell in current mash
+		nil_counter = 0  # keeps track of total nils set. Determines end of game.
 
 		#check range
 		loop do  # loop over each successive array checking for nil.
@@ -70,6 +77,7 @@ class GamesController < ApplicationController
 					if nil_counter == total_entries then# we have the solution!
 						#return plight
 						break
+						@plight
 					end
 
 					# reset the cycle_counter
@@ -82,8 +90,4 @@ class GamesController < ApplicationController
 		end
 	end
 
-
 end
-
-input_name = cars[0], cars[2], cars[3]
-params[.cars]
