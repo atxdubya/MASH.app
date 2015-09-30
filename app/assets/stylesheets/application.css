@@ -4,27 +4,22 @@
 GENERAL
 ********/
 
-/*image of a ripped notebook piece of paper with MASH as the title*/
+
+
+
+
+/********
+GAMEBOARD
+********/
+
+/**** GENERAL ****/
 body	{
 	background-image: url("desk_mash.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-
-
-/********
-HEADER
-********/
-
-
-
-
-
-/********
-PAGE
-********/
-
+/**** PAGE ****/
 .choice {
 	margin-top: 30%;
 }
@@ -36,21 +31,49 @@ form {
 
 .categories {
 	background-color: white;
-	font-size: 18px;
-	width: 150px;
+	font-size: 24px;
+	font-family: "Indie Flower", cursive;
 	text-align: center;
 	text-decoration: underline;
-}
-
-input {
 	border: 1px solid #83d0c9;
+	border-radius: 2px 2px 0 0;
+	width: 200px;
+	height: 50px;
 }
 
-/********
-FOOTER
-********/
+.options {
+	border: 1px solid #83d0c9;
+	font-family: "Indie Flower", cursive;
+	font-size: 16px;
+	width: 200px;
+	height: 30px;
+}
 
+/*.pencil {
+	background-color: transparent;
+	width: 25px;
+	height: 25px;
+}*/
 
+.outputbar {
+	margin-top: 150px;
+}
+
+.mashbtn {
+	font-family: "Indie Flower", cursive;
+	font-size: 24px;
+	color: white;
+	height: 34px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: #191919;
+}
+
+#results {
+	background-color: #191919;
+}
 
 
 
