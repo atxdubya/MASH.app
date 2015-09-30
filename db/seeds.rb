@@ -1,13 +1,13 @@
 users = User.create([
-	{first_name: 'Larissa', last_name: 'Tater', email: 'larissa@gmail.com', password: 'lt-password'}, 
-	{first_name: 'Erich', last_name: 'Abbot', email: 'erich@gmail.com', password: 'ea-password'}, 
+	{first_name: 'Larissa', last_name: 'Tater', email: 'larissa@gmail.com', password: 'lt-password'},
+	{first_name: 'Erich', last_name: 'Abbott', email: 'erich@gmail.com', password: 'ea-password'},
 	{first_name: 'Nicholas', last_name: 'Wallace', email: 'nicholas@gmail.com', password: 'nw-password'},
 	{first_name: 'Stephen', last_name: 'Deddens', email: 'stephen@gmail.com', password: 'sd-password'}])
 
 houses = House.create([
-	{style: 'mansion', theme: 'classic'}, 
-	{style: 'apartment', theme: 'classic'}, 
-	{style: 'shack', theme: 'classic'}, 
+	{style: 'mansion', theme: 'classic'},
+	{style: 'apartment', theme: 'classic'},
+	{style: 'shack', theme: 'classic'},
 	{style: 'house', theme: 'classic'}])
 
 cars = Car.create([
