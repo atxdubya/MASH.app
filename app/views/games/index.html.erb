@@ -4,7 +4,7 @@
 			<form class="choice car col-xs-3">
 				<input class="categories" type="text" value="CARS:" readonly>
 				<% @cars.each do |car| %>
-					<input class="options" type="text" value="<%= car.year %> <%= car.make %> <%= car.car_model %>" placeholder="1">
+					<input class="options" type="text" value="<%= car.name %>" placeholder="1">
 				<% end %>
 			</form>
 			<div class="choice col-xs-6">
@@ -42,6 +42,7 @@
 	    	</div>
 	    	<span class="col-xs-2"></span>
     	</div>
+    	<p><%= @gameboard %></p>
 	</div>
 
 

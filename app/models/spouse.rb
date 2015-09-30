@@ -4,7 +4,7 @@ class Spouse < ActiveRecord::Base
 
 	def self.show_spouses(number)
 		#@spouses = Spouses.sample
-		@spouse = Spouse.all
+		#@spouse = Spouse.all
 		@spouses = Spouse.order("RANDOM()").limit(number)
 		#return 'spouses'
 	end
