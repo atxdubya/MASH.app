@@ -40,6 +40,10 @@ Rails.application.routes.draw do
   put '/spouses/:id' => 'spouses#update'
   delete '/spouses/:id' => 'spouses#destroy'
   
+
+
+  get '/login' => 'login#login_form'
+  post '/login' => 'login#check_login'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
