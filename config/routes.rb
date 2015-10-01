@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users 
 
+
   get 'login' => 'sessions#new', :as => :login
   post 'logout' => 'sessions#destroy', :as => :logout 
 
   get '/games' => 'games#index'
   #get '/games/' => 'games#name_of_method'
+
 
   # get '/users/' => 'users#index'
   # get '/users/new' => 'users#new'
