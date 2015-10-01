@@ -61,11 +61,11 @@ class GamesController < ApplicationController
 		mashes = [houses, cars, spouses]
 
 		# Then build a store for our answers.
-		plight = Array.new(mashes.length)
+		@plight = Array.new(mashes.length)
 
-		# given above, the challenge is to use cycle to get plight
+		# given above, the challenge is to use cycle to get @plight
 		# method is to iterate over the arrays, testing for nil and testing cycle_ndx = cycle
-		# if not nil, update respective slot in plight with value and
+		# if not nil, update respective slot in @plight with value and
 		# set origin value to null, only increment index counter if origin not nil.
 		# when totalIncCounter = total entries in arrays... we are done.
 
@@ -75,7 +75,7 @@ class GamesController < ApplicationController
 		# when we have time try to refactor the above with something like the following
 		# mashes.each {|x| total_entries += x.length}
 
-		cycle_counter = 1  # when get to cycle then we extract a plight value
+		cycle_counter = 1  # when get to cycle then we extract a @plight value
 		mash_ndx = 0  # keeps track of current mash
 		cell_ndx = 0  # keeps track of current cell in current mash
 		nil_counter = 0  # keeps track of total nils set. Determines end of game.
@@ -94,8 +94,8 @@ class GamesController < ApplicationController
 
 			if mashes[mash_ndx][cell_ndx] != nil then # we have something to do
 				if cycle_counter == cycle then # cell has data and is time to extract it
-					# move the value into the plight,
-					plight[mash_ndx] = mashes[mash_ndx][cell_ndx]
+					# move the value into the @plight,
+					@plight[mash_ndx] = mashes[mash_ndx][cell_ndx]
 
 					# then set value to nil,
 					mashes[mash_ndx][cell_ndx] = nil
@@ -104,8 +104,8 @@ class GamesController < ApplicationController
 
 					if nil_counter == total_entries then# we have the solution!
 
-						#return plight
-						break plight
+						#return @plight
+						break
 					end
 					# reset the cycle_counter
 					cycle_counter = 1
@@ -115,5 +115,6 @@ class GamesController < ApplicationController
 			end # go to next cell
 			cell_ndx += 1
 		end
+		render :solution
 	end
 end
