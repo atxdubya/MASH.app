@@ -1,21 +1,26 @@
 Rails.application.routes.draw do
+  root :to => 'users#index'
 
   # resources :users
   # resources :cars
   # resources :houses
   # resources :spouses
   resources :sessions
+  resources :users 
 
-  get '/games/' => 'games#index'
+  get 'login' => 'sessions#new', :as => :login
+  post 'logout' => 'sessions#destroy', :as => :logout 
+
+  get '/games' => 'games#index'
   #get '/games/' => 'games#name_of_method'
 
-  get '/users/' => 'users#index'
-  get '/users/new' => 'users#new'
-  get '/users/:id' => 'users#show'
-  post '/users/' => 'users#create'
-  get '/users/:id/edit' => 'users#edit'
-  put '/users/:id' => 'users#update'
-  delete '/users/:id' => 'users#destroy'
+  # get '/users/' => 'users#index'
+  # get '/users/new' => 'users#new'
+  # get '/users/:id' => 'users#show'
+  # post '/users/' => 'users#create'
+  # get '/users/:id/edit' => 'users#edit'
+  # put '/users/:id' => 'users#update'
+  # delete '/users/:id' => 'users#destroy'
 
   get '/cars/index' => 'cars#index'
   get '/cars/new' => 'cars#new'

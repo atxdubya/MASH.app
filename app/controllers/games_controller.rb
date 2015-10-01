@@ -85,4 +85,4 @@ class GamesController < ApplicationController
 end
 
 input_name = cars[0], cars[2], cars[3]
-params[.cars]
+params[:cars]
