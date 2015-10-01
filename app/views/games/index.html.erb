@@ -3,7 +3,7 @@
             <form class="choice car col-xs-3">
                 <input class="categories" type="text" value="CARS:" readonly>
                 <% @cars.each do |car| %>
-                    <input class="options" type="text" value="<%= car.name %>" placeholder="1">
+                    <input class="options" type="text" value="<%= car.make %>" placeholder="1">
                 <% end %>
             </form>
             <div class="choice col-xs-6">

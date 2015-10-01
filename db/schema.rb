@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 20150930205551) do
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string   "name"
+    t.string   "make"
+    t.string   "car_model"
+    t.string   "year"
     t.string   "theme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,5 +62,4 @@ ActiveRecord::Schema.define(version: 20150930205551) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "games", "users"
-  add_foreign_key "games", "users", column: "id", name: "games_id_fkey"
 end
