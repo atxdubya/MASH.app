@@ -1,8 +1,0 @@
-<p>This is the code to add a new spouse to the database. This is not really necessary unless users will be able to add their own spouse options, which could clutter our database. This could use more thought.</p>
-
-<%= form_for @spouse do |f| %>
-  <%= f.text_field :name, :placeholder => "Name of Spouse" %>
-  <%= f.text_field :gender, :placeholder => "Gender of Spouse" %>
-    <%= f.text_field :theme, :placeholder => "Theme of Spouse" %>
-  <%= f.submit "Submit" %>
-<% end %>
