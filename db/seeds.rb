@@ -5,20 +5,23 @@ users = User.create([
 	{first_name: 'Stephen', last_name: 'Deddens', email: 'stephen@gmail.com', password: 'sd-password'}])
 
 houses = House.create([
-	{style: 'mansion', theme: 'classic'},
-	{style: 'apartment', theme: 'classic'},
-	{style: 'shack', theme: 'classic'},
-	{style: 'house', theme: 'classic'}])
+	{style: 'Mansion', theme: 'classic'},
+	{style: 'Apartment', theme: 'classic'},
+	{style: 'Shack', theme: 'classic'},
+	{style: 'House', theme: 'classic'}])
 
 cars = Car.create([
-	{make: 'Ford', car_model: 'Focus', year: '2003', theme: 'lame'},
-	{make: 'Toyota', car_model: 'Tacoma', year: '2015', theme: 'practical'}
+	{name: '2003 Ford Focus', theme: 'lame'},
+	{name: '2015 Toyota Tacoma', theme: 'practical'},
+	{name: '2000 Ford Ranger', theme: 'farm'},
+	{name: '2016 Honda Civic', theme: 'practical'}
 	])
 
 spouses = Spouse.create([
 	{name: 'Madonna', gender: 'female', theme: 'celebrity'},
 	{name: 'Barack Obama', gender: 'male', theme: 'president'},
-	{name: 'Brad Pitt', gender: 'male', theme: 'celebrity'}
+	{name: 'Brad Pitt', gender: 'male', theme: 'celebrity'},
+	{name: 'Tom Hardy', gender: 'male', theme: 'British'}
 	])
 
 
