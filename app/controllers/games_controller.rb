@@ -7,49 +7,73 @@ class GamesController < ApplicationController
 		@cars = Car.show_cars 2
 		@houses = House.show_houses 2
 		@spouses = Spouse.show_spouses 2
-		#@solveit = Game.solveit
 
 	end
 
+
+
 	def solveit
-		byebug
 
-
-		# self.solveit
 		# require 'pry'  (for debugging in the ruby rebel)
 		# binding.pry    (for setting a breakpoint when using the ruby rebel)
 		# byebug         (for setting breakpoint when in rails)
 
 		cycle = 6  #( roll of the dice )
 
-		# following are our mashes:
-		# Note... on foreign code run .compact!
-		# Otherwise, just one nil will cause a never ending loop!
-		abode  = ["Manson", "Apartment", "Shack",nil, "House"].compact!
-		wheels = ["Bus", "Bicycle", "Mercedes", "Geo", "Feet"]
-		spouse = ["Julia", "Sponge Bob Square Pants", "Hillery", "Madonna", "Gilligan"]
-		# kids   = ['1','Twins', '3', 'Twin girls and twin boys!']
+		# following are our test mashes:
+		# Note: We need to remove ["", nil], otherwise, just one nil or empty string
+		#   will cause a never ending loop! Also note: an empty string returns nil!
 
-		# houses = [@houses].compact!
-		# cars = [@cars]
-		# spouses = [@spouses]
+		# abode  = ["Manson", "Apartment", "Shack",nil, "House"]-["", nil]
+		# wheels = ["Bus", "Bicycle", "Mercedes", "Geo", "Feet"]-["", nil]
+		# spouse = ["Julia", "Sponge Bob Square Pants", "Hillery", "Madonna", "Gilligan"]-["", nil]
+		# kids   = ['1','Twins', '3', 'Twin girls and twin boys!']-["", nil]
 
-		mashes = [abode, wheels, spouse]
+#  params   This is a copy from byebug test on returned params hash
+# {"utf8"=>"✓",
+#  "authenticity_token"=>"KscWqG3yEAKTTSJELvpRSiy707aG2NABamNQcuT2HYuxikZ3o1qgh14nlEymvwxO2j3K0GyPQikw1hPqkpWblQ==",
+#  "cars"=>["Toyota", "Ford"],
+#  "spouses"=>["Brad Pitt", "Madonna"],
+#  "houses"=>["apartment", "shack"],
+#  "controller"=>"games",
+#  "action"=>"solveit"}
 
-		# mashes = [houses, cars, spouses]
+		# Extract the game arrays from the params hash and if all the fields
+		#    on a section of the game board are empty, give them a default entry.
+		# Special note: mashes array must be modified to track each extracted array!
+		houses = params[:houses]-["", nil]
+		if houses.length == 0 then
+			houses = ["No house? Too bad, you're sleeping on the street."]
+		end
 
-		# plight = {abode:nil, wheels:nil, spouse:nil, kids:nil}    # this is a hash...
-		@plight = Array.new(mashes.length) # build a store for our answers here.
+		cars = params[:cars]-["", nil]
+		if cars.length == 0 then
+			cars = ["No car? Too bad, you're walking."]
+		end
+
+		spouses = params[:spouses]-["", nil]
+		if spouses.length == 0 then
+			spouses = ["No spouse? Too bad, you need a friend."]
+		end
+
+		# Load mashes with the arrays we want to use in the order we want to use them.
+		# See Special note above.
+		mashes = [houses, cars, spouses]
+
+		# Then build a store for our answers.
+		plight = Array.new(mashes.length)
 
 		# given above, the challenge is to use cycle to get plight
-		# method is to iterate over the arrays, testing for nil and cycle_ndx = cycle
+		# method is to iterate over the arrays, testing for nil and testing cycle_ndx = cycle
 		# if not nil, update respective slot in plight with value and
 		# set origin value to null, only increment index counter if origin not nil.
-		# total when totalIncCounter = total entries in arrays... we are done.
+		# when totalIncCounter = total entries in arrays... we are done.
 
-		total_entries = abode.length + wheels.length + spouse.length
+		# iterate over the mashes array to find the total entries
 
-		# total_entries = houses.length + cars.length + spouses.length
+		total_entries = houses.length + cars.length + spouses.length
+		# when we have time try to refactor the above with something like the following
+		# mashes.each {|x| total_entries += x.length}
 
 		cycle_counter = 1  # when get to cycle then we extract a plight value
 		mash_ndx = 0  # keeps track of current mash
@@ -79,12 +103,10 @@ class GamesController < ApplicationController
 					nil_counter += 1
 
 					if nil_counter == total_entries then# we have the solution!
+
 						#return plight
-
 						break plight
-
 					end
-
 					# reset the cycle_counter
 					cycle_counter = 1
 				else # cell has data but we skipped over it
@@ -94,5 +116,4 @@ class GamesController < ApplicationController
 			cell_ndx += 1
 		end
 	end
-
 end
