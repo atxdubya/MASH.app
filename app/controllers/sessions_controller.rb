@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
 	def create
 		if @user = login(params[:email], params[:password])
-			redirect_back_or_to (:games) 
+			redirect_back_or_to '/games' 
 			#redirect_back_or_to(:users, notice: 'Login successful')
 		else
 			render :new 
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to '/users'
+		redirect_to '/'
 		#redirect_to(:users, notice: 'Logged out!')
 	end
 

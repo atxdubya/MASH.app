@@ -7,18 +7,20 @@ Rails.application.routes.draw do
   # resources :spouses
   resources :sessions
   resources :users 
-
+  resources :game_logs, only: [:index, :show]
 
   get 'login' => 'sessions#new', :as => :login
+  
   post 'logout' => 'sessions#destroy', :as => :logout 
-
+  get  'logout' => 'users#index'
+  
   get '/games' => 'games#index'
   #get '/games/' => 'games#name_of_method'
 
 
-   get '/users/' => 'users#index'
+   #get '/users/' => 'users#index'
 
-   get '/gamelog' => 'gamelogs#index'
+   
    #get '/gamelogs' => 'gamelogs#show'
   # get '/users/new' => 'users#new'
   # get '/users/:id' => 'users#show'

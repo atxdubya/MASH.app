@@ -1,6 +1,6 @@
-class CreateGamelogs < ActiveRecord::Migration
+class CreateGameLogs < ActiveRecord::Migration
   def change
-    create_table :gamelogs do |t|
+    create_table :game_logs do |t|
     	t.string :house
     	t.string :car
     	t.string :spouse

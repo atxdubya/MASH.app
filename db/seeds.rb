@@ -23,7 +23,7 @@ spouses = Spouse.create([
 	{name: 'Brad Pitt', gender: 'male', theme: 'celebrity'},
 	{name: 'Tom Hardy', gender: 'male', theme: 'British'}
 	])
-game_logs = Gamelog.create([
+game_logs = GameLog.create([
 	{house: 'Shack', car: '1969 Ford Mustang', spouse: 'Halle Berry', user_id: 1}
 
 	])
