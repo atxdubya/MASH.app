@@ -1,9 +1,0 @@
-<p>This is the code to add a new car to the database. This is not really necessary unless users will be able to add their own car options, which could clutter our database. This could use more thought.</p>
-
-<%= form_for @car do |f| %>
-  <%= f.text_field :make, :placeholder => "Car Make" %>
-  <%= f.text_field :car_model, :placeholder => "Car Model" %>
-  <%= f.text_field :year, :placeholder => "Car Year" %>
-  <%= f.text_field :theme, :placeholder => "Car Theme" %>
-  <%= f.submit "Submit" %>
-<% end %>

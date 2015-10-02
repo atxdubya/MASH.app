@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get  'logout' => 'users#index'
   
   get '/games' => 'games#index'
-  #get '/games/' => 'games#name_of_method'
+  post '/games/' => 'games#solveit'
 
 
    #get '/users/' => 'users#index'
