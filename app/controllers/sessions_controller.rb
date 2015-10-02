@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
 	def create
 		if @user = login(params[:email], params[:password])
-			redirect_back_or_to '/games' 
+			redirect_to '/games' 
 			#redirect_back_or_to(:users, notice: 'Login successful')
 		else
 			render :new 
