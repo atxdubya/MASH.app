@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post 'logout' => 'sessions#destroy', :as => :logout 
 
   get '/games' => 'games#index'
-  #get '/games/' => 'games#name_of_method'
+  post '/games/' => 'games#solveit'
 
 
   # get '/users/' => 'users#index'
