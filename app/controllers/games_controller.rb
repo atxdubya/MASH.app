@@ -10,7 +10,5 @@ class GamesController < ApplicationController
 		@plight = Game.solveit(params)
 		render :index
 	end
-
 end
-
 

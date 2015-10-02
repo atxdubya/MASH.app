@@ -27,7 +27,10 @@
 games = Game.create([
 	{house: 'Mansion'}, {spouse: 'Barack Obama'}, {car: '2003 Ford Focus'}, {references: 1}
 	])
+game_logs = GameLog.create([
+	{house: 'Shack', car: '1969 Ford Mustang', spouse: 'Halle Berry', user_id: 1}
 
+	])
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
