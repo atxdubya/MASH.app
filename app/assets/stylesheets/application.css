@@ -33,7 +33,7 @@ form {
 }
 
 .choice {
-	margin-top: 30%;
+	margin-top: none;
 }
 
 .categories {
@@ -64,6 +64,7 @@ form {
 
 .outputbar {
 	margin-top: 150px;
+	margin-bottom: 150px;
 }
 
 .mashbtn {
