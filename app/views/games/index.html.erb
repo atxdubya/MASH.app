@@ -7,6 +7,10 @@
                         <input name="cars[]" class="options" type="text" value="<%= car.make %>" placeholder="1">
                     <% end %>
                 <% end %>
+                <% if @cars.length < 4 then make = 6 - @cars.length else make = 2 end %>
+                <% for i in 1..make do %>
+                        <input name="cars[]" class="options" type="text" value="" placeholder="We can do better!">
+                <% end %>
             </div>
             <div class="choice col-xs-6">
                 <div class="row">
@@ -17,7 +21,10 @@
                             <input name="spouses[]" class="options" type="text" value="<%= spouse.name %>" placeholder="1">
                             <% end %>
                         <% end %>
-                    </div>
+                        <% if @spouses.length < 4 then make = 6 - @spouses.length else make = 2 end %>
+                        <% for i in 1..make do %>
+                                <input name="spouses[]" class="options" type="text" value="" placeholder="Dream on!">
+                        <% end %>
                     <span class="col-xs-3"></span>
                 </div>
             </div>
@@ -27,6 +34,11 @@
                     <input name="houses[]" class="options" type="text" value="<%= house.style %>" placeholder="1">
                     <% end %>
                 <% end %>
+                <% if @houses.length < 4 then make = 6 - @houses.length else make = 2 end %>
+                <% for i in 1..make do %>
+                        <input name="houses[]" class="options" type="text" value="" placeholder="Make a wish!">
+                <% end %>
+                </div>
             </div>
         </div>
         <!-- button to click to get your number goes here-->
