@@ -1,4 +1,7 @@
 class GameLogsController < ApplicationController
+<<<<<<< HEAD
+end
+=======
 
 	def index
 		@bananas = GameLog.show_gamelogs
@@ -11,3 +14,4 @@ end
 
 
 
+>>>>>>> master
