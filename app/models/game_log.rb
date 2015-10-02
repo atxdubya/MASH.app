@@ -1,5 +1,6 @@
 class GameLog < ActiveRecord::Base
 
+
 	belongs_to :user
 
 	def self.show_gamelogs()
@@ -9,4 +10,5 @@ class GameLog < ActiveRecord::Base
 		GameLog.where(user_id: user_id)
 
 	end
+
 end
