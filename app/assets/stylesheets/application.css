@@ -1,32 +1,39 @@
+* {
+	box-sizing: border-box;
+}
 
-
-/********
-GENERAL
-********/
-
-
-
-
-
-/********
-GAMEBOARD
-********/
-
-/**** GENERAL ****/
 body	{
 	background-image: url("desk_mash.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-/**** PAGE ****/
-.choice {
-	margin-top: 30%;
-}
-
 form {
 	text-align: center;
 	list-style: none;
+}
+
+.yield {
+	margin-top: 200px;
+}
+
+.field {
+	padding: 10px;
+}
+
+.navbar {
+	min-height: 40px;
+}
+
+
+.navbar-header {
+	font-weight: bold;
+	font-size: 20px;    
+	margin-top: 5px;
+}
+
+.choice {
+	margin-top: 30%;
 }
 
 .categories {

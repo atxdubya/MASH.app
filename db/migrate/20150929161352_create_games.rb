@@ -1,10 +1,10 @@
-class CreateGames < ActiveRecord::Migration
+class CreateGameLogs < ActiveRecord::Migration
   def change
-    create_table :games do |t|
+    create_table :gamelogs do |t|
     	t.string :house
     	t.string :car
     	t.string :spouse
-    	t.references :user, index: true, foreign_key: true
+    	add_foreign_key :games, :users
 
       t.timestamps null: false
     end

@@ -1,7 +1,0 @@
-<p>This is the code to add a new house to the database. This is not really necessary unless users will be able to add their own home options, which could clutter our database. This could use more thought.</p>
-
-<%= form_for @house do |f| %>
-  <%= f.text_field :style, :placeholder => "Style of House" %>
-  <%= f.text_field :theme, :placeholder => "Theme of House" %>
-  <%= f.submit "Submit" %>
-<% end %>
