@@ -3,8 +3,9 @@
         <div class="row">
             <div class="choice car col-xs-3">
                 <input class="categories" type="text" value="CARS:" readonly>
-                <% @cars.each do |car| %>
-                    <input name="cars[]" class="options" type="text" value="<%= car.make %>" placeholder="1">
+                <% if @cars then @cars.each do |car| %>
+                        <input name="cars[]" class="options" type="text" value="<%= car.make %>" placeholder="1">
+                    <% end %>
                 <% end %>
             </div>
             <div class="choice col-xs-6">
@@ -12,8 +13,9 @@
                     <span class="col-xs-3"></span>
                     <div class="spouse col-xs-6">
                         <input class="categories" type="text" value="SPOUSE:" readonly>
-                        <% @spouses.each do |spouse| %>
+                        <% if @spouses then @spouses.each do |spouse| %>
                             <input name="spouses[]" class="options" type="text" value="<%= spouse.name %>" placeholder="1">
+                            <% end %>
                         <% end %>
                     </div>
                     <span class="col-xs-3"></span>
@@ -21,8 +23,9 @@
             </div>
             <div class="choice house col-xs-3">
                 <input class="categories" type="text" value="LIVING:" readonly>
-                <% @houses.each do |house| %>
+                <% if @houses then @houses.each do |house| %>
                     <input name="houses[]" class="options" type="text" value="<%= house.style %>" placeholder="1">
+                    <% end %>
                 <% end %>
             </div>
         </div>
@@ -36,9 +39,16 @@
             <span class="col-xs-2"></span>
             <div class="col-xs-8 input-group">
               <span class="input-group-btn">
-                  <input class="mashbtn btn btn-default" type="submit" value='mash it'>
+                <input class="mashbtn btn btn-default" type="submit" value='mash it'>
               </span>
-              <input type="text" class="form-control" id="results" placeholder="Your life..." value="<%= @plight %>"valuereadonly>
+                <% if @plight then%>
+                    <% @plight.each do |mash| %>
+    <input type="text" class="form-control" id="results" placeholder="Your life..." value="
+                    <%=  mash  %>
+                    <% end %>
+                <% end %>
+              " readonly>
+           </div>
             </div>
             <span class="col-xs-2"></span>
         </div>
