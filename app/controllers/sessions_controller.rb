@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 			redirect_back_or_to (:games) 
 			#redirect_back_or_to(:users, notice: 'Login successful')
 		else
-			render :new + '/login?err=1'
+			render :new 
 			#flash.now[:alert] = 'Login failed'
 			#render action 'new'
 		end

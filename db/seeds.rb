@@ -23,7 +23,10 @@ spouses = Spouse.create([
 	{name: 'Brad Pitt', gender: 'male', theme: 'celebrity'},
 	{name: 'Tom Hardy', gender: 'male', theme: 'British'}
 	])
+game_logs = Gamelog.create([
+	{house: 'Shack', car: '1969 Ford Mustang', spouse: 'Halle Berry', user_id: 1}
 
+	])
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).

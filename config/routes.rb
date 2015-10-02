@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   #get '/games/' => 'games#name_of_method'
 
 
-  # get '/users/' => 'users#index'
+   get '/users/' => 'users#index'
+
+   get '/gamelog' => 'gamelogs#index'
+   #get '/gamelogs' => 'gamelogs#show'
   # get '/users/new' => 'users#new'
   # get '/users/:id' => 'users#show'
   # post '/users/' => 'users#create'

@@ -11,28 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930205551) do
+ActiveRecord::Schema.define(version: 20150929161352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string   "make"
-    t.string   "car_model"
-    t.string   "year"
+    t.string   "name"
     t.string   "theme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "games", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "gamelogs", force: :cascade do |t|
     t.string   "house"
     t.string   "car"
     t.string   "spouse"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "gamelogs", ["user_id"], name: "index_gamelogs_on_user_id", using: :btree
 
   create_table "houses", force: :cascade do |t|
     t.string   "style"
@@ -61,5 +61,4 @@ ActiveRecord::Schema.define(version: 20150930205551) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  add_foreign_key "games", "users"
 end
