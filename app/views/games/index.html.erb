@@ -3,13 +3,14 @@
         <div class="row">
             <div class="choice car col-xs-3">
                 <input class="categories" type="text" value="CARS:" readonly>
-                <% if @cars then @cars.each do |car| %>
+                <% if @cars then %>
+                    <%  @cars.each do |car| %>
                         <input name="cars[]" class="options" type="text" value="<%= car.make %>" placeholder="1">
                     <% end %>
-                <% end %>
-                <% if @cars.length < 4 then make = 6 - @cars.length else make = 2 end %>
-                <% for i in 1..make do %>
-                        <input name="cars[]" class="options" type="text" value="" placeholder="We can do better!">
+                    <% if @cars.length < 4 then make = 6 - @cars.length else make = 2 end %>
+                    <% for i in 1..make do %>
+                            <input name="cars[]" class="options" type="text" value="" placeholder="We can do better!">
+                    <% end %>
                 <% end %>
             </div>
             <div class="choice col-xs-6">
@@ -17,28 +18,30 @@
                     <span class="col-xs-3"></span>
                     <div class="spouse col-xs-6">
                         <input class="categories" type="text" value="SPOUSE:" readonly>
-                        <% if @spouses then @spouses.each do |spouse| %>
-                            <input name="spouses[]" class="options" type="text" value="<%= spouse.name %>" placeholder="1">
+                        <% if @spouses then %>
+                            <% @spouses.each do |spouse| %>
+                               <input name="spouses[]" class="options" type="text" value="<%= spouse.name %>" placeholder="1">
+                            <% end %>
+                            <% if @spouses.length < 4 then make = 6 - @spouses.length else make = 2 end %>
+                            <% for i in 1..make do %>
+                                    <input name="spouses[]" class="options" type="text" value="" placeholder="Dream on!">
                             <% end %>
                         <% end %>
-                        <% if @spouses.length < 4 then make = 6 - @spouses.length else make = 2 end %>
-                        <% for i in 1..make do %>
-                                <input name="spouses[]" class="options" type="text" value="" placeholder="Dream on!">
-                        <% end %>
+                    </div>
                     <span class="col-xs-3"></span>
                 </div>
             </div>
             <div class="choice house col-xs-3">
                 <input class="categories" type="text" value="LIVING:" readonly>
-                <% if @houses then @houses.each do |house| %>
-                    <input name="houses[]" class="options" type="text" value="<%= house.style %>" placeholder="1">
+                <% if @houses then %>
+                    <% @houses.each do |house| %>
+                        <input name="houses[]" class="options" type="text" value="<%= house.style %>" placeholder="1">
+                    <% end %>
+                    <% if @houses.length < 4 then make = 6 - @houses.length else make = 2 end %>
+                    <% for i in 1..make do %>
+                            <input name="houses[]" class="options" type="text" value="" placeholder="Make a wish!">
                     <% end %>
                 <% end %>
-                <% if @houses.length < 4 then make = 6 - @houses.length else make = 2 end %>
-                <% for i in 1..make do %>
-                        <input name="houses[]" class="options" type="text" value="" placeholder="Make a wish!">
-                <% end %>
-                </div>
             </div>
         </div>
         <!-- button to click to get your number goes here-->
