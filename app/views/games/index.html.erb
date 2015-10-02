@@ -63,8 +63,11 @@
                     <% @plight.each do |mash| %>
                         <%=  mash  %>
                     <% end %>
-              " readonly>
+                    " readonly>
                 <% end %>
+              <span class="input-group-btn">
+                <input onclick="games" class="mashbtn btn btn-default" type="submit" value='play again' disabled="true">
+              </span>
            </div>
             </div>
             <span class="col-xs-2"></span>

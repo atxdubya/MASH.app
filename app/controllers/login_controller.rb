@@ -11,8 +11,8 @@
             session[:current_user_id] = user.id
 
             redirect_to '/'
-        else 
-            # Not a match, redirect to the login page 
+        else
+            # Not a match, redirect to the login page
             redirect_to '/login?err=1'
         end
     end

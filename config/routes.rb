@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root :to => 'users#index'
 
   # resources :users
   # resources :cars
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   post '/games' => 'games#solveit'
   #get '/games/' => 'games#name_of_method'
 
+  # root :to => 'games#index'
 
   # get '/users/' => 'users#index'
   # get '/users/new' => 'users#new'

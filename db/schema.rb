@@ -17,9 +17,7 @@ ActiveRecord::Schema.define(version: 20150930205551) do
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string   "make"
-    t.string   "car_model"
-    t.string   "year"
+    t.string   "name"
     t.string   "theme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

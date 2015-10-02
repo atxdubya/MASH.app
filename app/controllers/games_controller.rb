@@ -15,7 +15,6 @@ class GamesController < ApplicationController
  		@plight = Game.solveit(params)
  		# redirect_to '/games/'   #  option
  			render :index						#  option
-
  	end
 
 
