@@ -1,7 +1,8 @@
 class GameLogsController < ApplicationController
 
 	def index
-		@bananas = GameLog.show_gamelogs
+		#@logs = GameLog.show_gamelogs
+		@logs = current_user.game_logs
 	end
 
 	def show 

@@ -17,6 +17,14 @@ form {
 	margin-top: 200px;
 }
 
+.gamelog {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    list-style: none;
+}
+
+
 .field {
 	padding: 10px;
 }

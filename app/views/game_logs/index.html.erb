@@ -1,6 +1,5 @@
- <% @bananas.each do |gamelog| %>
- 	<%= gamelog.user_id %>
- 	<%= gamelog.house %>
- 	<%= gamelog.car %>
- 	<%= gamelog.spouse %>
+ <ul class="gamelog">
+ <% @logs.each do |gamelog| %>
+ 	<li><%= gamelog.user_id %> <%= gamelog.house %> <%= gamelog.car %> <%= gamelog.spouse %></li>
  <% end %>
+</ul>
