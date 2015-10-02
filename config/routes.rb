@@ -1,44 +1,57 @@
 Rails.application.routes.draw do
+  root :to => 'users#index'
 
   # resources :users
   # resources :cars
   # resources :houses
   # resources :spouses
   resources :sessions
+  resources :users 
+  resources :game_logs, only: [:index, :show]
 
-  get '/games/' => 'games#index'
+  get 'login' => 'sessions#new', :as => :login
+  
+  post 'logout' => 'sessions#destroy', :as => :logout 
+  get  'logout' => 'users#index'
+  
+  get '/games' => 'games#index'
+  post '/games/' => 'games#solveit'
 
-  get '/users/' => 'users#index'
-  get '/users/new' => 'users#new'
-  get '/users/:id' => 'users#show'
-  post '/users/' => 'users#create'
-  get '/users/:id/edit' => 'users#edit'
-  put '/users/:id' => 'users#update'
-  delete '/users/:id' => 'users#destroy'
 
-  get '/cars/index' => 'cars#index'
-  get '/cars/new' => 'cars#new'
-  get '/cars/:id' => 'cars#show'
-  post '/cars/' => 'cars#create'
-  get '/cars/:id/edit' => 'cars#edit'
-  put '/cars/:id' => 'cars#update'
-  delete '/cars/:id' => 'cars#destroy'
+   #get '/users/' => 'users#index'
 
-  get '/houses/index' => 'houses#index'
-  get '/houses/new' => 'houses#new'
-  get '/houses/:id' => 'houses#show'
-  post '/houses/' => 'houses#create'
-  get '/houses/:id/edit' => 'houses#edit'
-  put '/houses/:id' => 'houses#update'
-  delete '/houses/:id' => 'houses#destroy'
+   
+   #get '/gamelogs' => 'gamelogs#show'
+  # get '/users/new' => 'users#new'
+  # get '/users/:id' => 'users#show'
+  # post '/users/' => 'users#create'
+  # get '/users/:id/edit' => 'users#edit'
+  # put '/users/:id' => 'users#update'
+  # delete '/users/:id' => 'users#destroy'
 
-  get '/spouses/index' => 'spouses#index'
-  get '/spouses/new' => 'spouses#new'
-  get '/spouses/:id' => 'spouses#show'
-  post '/spouses/' => 'spouses#create'
-  get '/spouses/:id/edit' => 'spouses#edit'
-  put '/spouses/:id' => 'spouses#update'
-  delete '/spouses/:id' => 'spouses#destroy'
+  # get '/cars/index' => 'cars#index'
+  # get '/cars/new' => 'cars#new'
+  # get '/cars/:id' => 'cars#show'
+  # post '/cars/' => 'cars#create'
+  # get '/cars/:id/edit' => 'cars#edit'
+  # put '/cars/:id' => 'cars#update'
+  # delete '/cars/:id' => 'cars#destroy'
+
+  # get '/houses/index' => 'houses#index'
+  # get '/houses/new' => 'houses#new'
+  # get '/houses/:id' => 'houses#show'
+  # post '/houses/' => 'houses#create'
+  # get '/houses/:id/edit' => 'houses#edit'
+  # put '/houses/:id' => 'houses#update'
+  # delete '/houses/:id' => 'houses#destroy'
+
+  # get '/spouses/index' => 'spouses#index'
+  # get '/spouses/new' => 'spouses#new'
+  # get '/spouses/:id' => 'spouses#show'
+  # post '/spouses/' => 'spouses#create'
+  # get '/spouses/:id/edit' => 'spouses#edit'
+  # put '/spouses/:id' => 'spouses#update'
+  # delete '/spouses/:id' => 'spouses#destroy'
   
 
 
