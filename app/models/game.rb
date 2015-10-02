@@ -97,7 +97,6 @@ class Game < ActiveRecord::Base
 					if nil_counter == total_entries then# we have the solution!
 
 						return @plight
-						# break      detritus from living on the controller
 
 					end
 					# reset the cycle_counter
@@ -108,6 +107,5 @@ class Game < ActiveRecord::Base
 			end # go to next cell
 			cell_ndx += 1
 		end
-		# render :solution    detritus from living on the controller
 	end
  end
