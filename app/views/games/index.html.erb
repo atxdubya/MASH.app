@@ -56,13 +56,15 @@
               <span class="input-group-btn">
                 <input class="mashbtn btn btn-default" type="submit" value='mash it'>
               </span>
-                <% if @plight then%>
+                <% if !@plight then%>
+                    <input type="text" class="form-control" id="results" placeholder="Your life..." value="Mash it to read your future." readonly>
+                <% else %>
+                    <input type="text" class="form-control" id="results" placeholder="Your life..." value="
                     <% @plight.each do |mash| %>
-    <input type="text" class="form-control" id="results" placeholder="Your life..." value="
-                    <%=  mash  %>
+                        <%=  mash  %>
                     <% end %>
-                <% end %>
               " readonly>
+                <% end %>
            </div>
             </div>
             <span class="col-xs-2"></span>
