@@ -1,11 +1,13 @@
 <%= form_tag do %>
     <div class="container">
+
         <div class="row">
+
             <div class="choice car col-xs-3">
                 <input class="categories" type="text" value="CARS:" readonly>
                 <% if @cars then %>
                     <%  @cars.each do |car| %>
-                        <input name="cars[]" class="options" type="text" value="<%= car.name %>" placeholder="1">
+                        <input name="cars[]" class="options" type="text" value="<%= car.car_model %>" placeholder="1">
                 <% end %>
                 
                 <% if @cars.length < 4 then name = 6 - @cars.length else name = 2 end %>
@@ -25,8 +27,7 @@
                         <% if @spouses then %>
                             <% @spouses.each do |spouse| %>
                                <input name="spouses[]" class="options" type="text" value="<%= spouse.name %>" placeholder="1">
-                        <% end %>
-                            
+                        <% end %>        
                         <% if @spouses.length < 4 then name = 6 - @spouses.length else name = 2 end %>
                             <% for i in 1..name do %>
                                 <input name="spouses[]" class="options" type="text" value="" placeholder="Dream on!">
@@ -37,7 +38,6 @@
                     <span class="col-xs-3"></span>
                 </div>
             </div>
-            
 
             <div class="choice house col-xs-3">
                 <input class="categories" type="text" value="LIVING:" readonly>
@@ -52,19 +52,18 @@
                     <% end %>
                 <% end %>
             </div>
+
         </div>
 
 
-        <div class="row outputbar">
-            <span class="col-xs-2"></span>
-            
-            <div class="col-xs-8 input-group">
+        <div class="row outputbar">            
+            <div class="col-xs-12 input-group">
                 <span class="input-group-btn">
                     <input class="mashbtn btn btn-default" type="submit" value='mash it'>
                 </span>
                 
                 <% if !@plight then%>
-                    <input type="text" class="form-control" id="results" placeholder="Your life..." value="Mash it to read your future." readonly>
+                    <input type="text" class="form-control" id="results" placeholder="Your life..." value="Mash it to read your future..." readonly>
                 <% else %>
                     <input type="text" class="form-control" id="results" placeholder="Your life..." value="
                     <% @plight.each do |mash| %>
@@ -74,10 +73,10 @@
                 <% end %>
            </div>
         </div>
-        
-        <span class="col-xs-2"></span>
-        
+        <!-- <form>
+            <input class="refresh-btn" type="button" onClick="history.back()" value="Refresh Game">
+        </form> -->
+        <button class="refresh-btn"><a href="/games">Refresh Game</button>
 
     </div>
-</div>
 <% end %>

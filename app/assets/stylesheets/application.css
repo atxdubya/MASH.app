@@ -1,5 +1,11 @@
+
+/********
+GENERAL
+********/
+
 * {
 	box-sizing: border-box;
+	
 }
 
 body	{
@@ -13,36 +19,61 @@ form {
 	list-style: none;
 }
 
+a {
+	color: white;
+}
+
 .yield {
-	margin-top: 200px;
-}
-
-.gamelog {
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    list-style: none;
+	margin-top: 300px;
+	text-align: center;
 }
 
 
-.field {
-	padding: 10px;
-}
+
+/********
+NAVBAR
+********/
 
 .navbar {
 	min-height: 40px;
+	color: white;
+	background: transparent;
+	border: 0px solid white;
+	text-align: center;
 }
 
+.container {
+	text-align: center;
+}
 
 .navbar-header {
 	font-weight: bold;
 	font-size: 20px;    
 	margin-top: 5px;
+	text-align: center;
 }
 
-.choice {
-	margin-top: none;
+.navlink {
+	color: white;
+	text-align: center;
+	width: 100%;
 }
+
+
+
+/********
+LOGIN/REGISTERPAGE
+********/
+
+.field {
+	padding: 10px;
+}
+
+
+
+/********
+GAMEPAGE
+********/
 
 .categories {
 	background-color: white;
@@ -64,15 +95,17 @@ form {
 	height: 30px;
 }
 
-/*.pencil {
-	background-color: transparent;
-	width: 25px;
-	height: 25px;
-}*/
-
 .outputbar {
-	margin-top: 150px;
-	margin-bottom: 150px;
+	margin-top: 10%;
+	margin-bottom: 35px;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-control {
+	color: white;
+	font-weight: lighter;
 }
 
 .mashbtn {
@@ -89,6 +122,82 @@ form {
 
 #results {
 	background-color: #191919;
+
+}
+
+.refresh-btn {
+	margin-bottom: 50px;
+	border-radius: 100px;
+	background-color: black;
+	font-weight: bold;
+}
+
+
+
+/********
+EDITUSERSPAGE
+********/
+
+.editbox {
+	width: 300px;
+	height: 190px;
+	border: 5px solid white;
+	margin: 0 auto;
+}
+
+.edituser {
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	text-decoration: underline;
+}
+
+.userinfo {
+	color: white;
+	font-size: 16px;
+	text-align: left;
+	padding-left: 5%;
+	padding-top: 2%;
+}
+
+.userlog {
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
+	margin-top: 15px;
+}
+
+
+/********
+HOMEPAGE
+********/
+
+.indexbox {
+	width: 25%;
+	height: 30%;
+	border: 5px solid white;
+	margin: 0 auto;
+}
+
+.register_login {
+	list-style: none;
+	font-size: 36px;
+	color: white;
+	padding-top: 1%;
+}
+
+
+
+/********
+GAMELOGPAGE
+********/
+
+.gamelog {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    list-style: none;
 }
 
 

@@ -11,31 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151002015149) do
-=======
 ActiveRecord::Schema.define(version: 20151002020334) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string   "name"
+    t.string   "make"
+    t.string   "car_model"
+    t.string   "year"
     t.string   "theme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "game_logs", force: :cascade do |t|
-<<<<<<< HEAD
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "gamelogs", force: :cascade do |t|
-=======
->>>>>>> master
     t.string   "house"
     t.string   "car"
     t.string   "spouse"
@@ -44,11 +34,12 @@ ActiveRecord::Schema.define(version: 20151002020334) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  add_index "gamelogs", ["user_id"], name: "index_gamelogs_on_user_id", using: :btree
-=======
   add_index "game_logs", ["user_id"], name: "index_game_logs_on_user_id", using: :btree
->>>>>>> master
+
+  create_table "games", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "houses", force: :cascade do |t|
     t.string   "style"

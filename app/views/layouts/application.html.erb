@@ -13,17 +13,17 @@
 
 <body>
 	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-			<% if current_user %>
-				<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+	  <div class="container">
+    	   <div class="navbar-header navlink">
+				<% if current_user %>
+				<a href="/games">New Game</a>
+				|
+				<%= link_to "User Profile", edit_user_path(current_user.id) %>
+				|
 				<%= link_to "Logout", :logout, method: :post %>
-			<% else %>
-				<%= link_to "Register", new_user_path %> | 
-				<%= link_to "Login", :login %>
-			<% end %>
-	    </div>
-	  </div>
+				<% end %>
+			</div>
+	   </div>
 	</nav>
 
 	<div class="yield">
