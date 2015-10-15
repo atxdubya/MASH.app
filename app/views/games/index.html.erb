@@ -65,17 +65,10 @@
                 <% if !@plight then%>
                     <input type="text" class="form-control" id="results" placeholder="Your life..." value="Mash it to read your future..." readonly>
                 <% else %>
-                    <input type="text" class="form-control" id="results" placeholder="Your life..." value="
-                    <% @plight.each do |mash| %>
-                        <%=  mash  %>
-                    <% end %>
-                    " readonly>
+                    <input type="text" class="form-control" id="results" placeholder="Your life..." value="Your whip is a <%= @plight[0] %> and your boo is <%= @plight[1] %>. You live in a swanky <%= @plight[2] %>." readonly>
                 <% end %>
            </div>
         </div>
-        <!-- <form>
-            <input class="refresh-btn" type="button" onClick="history.back()" value="Refresh Game">
-        </form> -->
         <button class="refresh-btn"><a href="/games">Refresh Game</button>
 
     </div>
